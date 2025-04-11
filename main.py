@@ -58,3 +58,20 @@ def logout():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
+def registrar_evento_en_sheets(usuario, accion):
+    url = "https://script.google.com/macros/s/AKfycbzco4XBT-yo9nJSBEF97xAasnL48LHZjTsei5w5VB9fkwRvlh7e6xB3k_vmOsJUQZXroQ/exec"
+    payload = {
+        'usuario': usuario,
+        'accion': accion
+    }
+    try:
+        response = requests.post(url, data=payload)
+        if response.status_code != 200:
+            print("Error al registrar el evento en Google Sheets.")
+            print("Código:", response.status_code)
+            print("Respuesta:", response.text)
+        else:
+            print("✅ Evento registrado correctamente.")
+    except Exception as e:
+        print("❌ Excepción durante el envío:", e)
