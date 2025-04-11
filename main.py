@@ -13,7 +13,7 @@ usuarios = {
 
 # Función para registrar evento en Google Sheets
 def registrar_evento_en_sheets(usuario, accion):
-    url = "https://script.googleapis.com/v1/scripts/AKfycbxpvT_w8fioil6Xwabth9j9XKKpj41Pf9vBpp3FmPHktK3JawFZHqSutYR7BOnYe_7k5Q:run"  # Coloca la URL de tu API de Google Apps Script aquí
+    url = "https://script.google.com/macros/library/d/1JsAOWbZtuyohK15oFLuhIYKETtRAU2GrORLmaz8SlalooMP5gqqGwFb-/2"  # Coloca la URL de tu API de Google Apps Script aquí
     payload = {
         'usuario': usuario,
         'accion': accion
